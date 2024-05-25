@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hoja de Trabajo</title>
+</head>
+<body>
+    <h1>Hoja de Trabajo de una Empresa</h1>
+    <table border="1">
+        <tr>
+            <th>Concepto</th>
+            <th>Cargo</th>
+            <th>Abono</th>
+        </tr>
+        <tr>
+            <td>Banco</td>
+            <td><input type="number" name="banco" id="banco"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Terreno</td>
+            <td><input type="number" name="terreno" id="terreno"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Edificio</td>
+            <td><input type="number" name="edificio" id="edificio"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Capital Social</td>
+            <td></td>
+            <td id="resultado"></td>
+        </tr>
+        <tr>
+            <td>Almacén</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Proveedores</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Publicidad</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Acreedores</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+        function calcularCapitalSocial() {
+            var banco = document.getElementById('banco').value;
+            var terreno = document.getElementById('terreno').value;
+            var edificio = document.getElementById('edificio').value;
+
+            var total = parseFloat(banco) + parseFloat(terreno) + parseFloat(edificio);
+
+            document.getElementById('resultado').innerText = total.toFixed(2);
+        }
+
+        document.getElementById('banco').addEventListener('input', calcularCapitalSocial);
+        document.getElementById('terreno').addEventListener('input', calcularCapitalSocial);
+        document.getElementById('edificio').addEventListener('input', calcularCapitalSocial);
+    </script>
+</body>
+</html>
